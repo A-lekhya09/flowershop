@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-repeat: no-repeat;
+            background-size: cover;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: rgba(243, 245, 243, 0.9);
+            padding: 20px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header .logo {
+            font-size: 30px;
+            font-weight: bold;
+            color: #13010d;
+        }
+
+        header nav {
+            display: flex;
+            gap: 120px;
+            font-size: 30px;
+        }
+
+        header nav a {
+            text-decoration: none;
+            color: #0f0f0f;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        header nav a:hover {
+            color: #4bd633;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .product-card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        .product-card images {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            
+        }
+
+        .product-card h3 {
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+
+        .product-card p {
+            font-size: 1em;
+            color: #555;
+        }
+
+        .product-card .price {
+            font-weight: bold;
+            color: #008000;
+            margin-bottom: 10px;
+        }
+
+        .product-card button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .product-card button:hover {
+            background-color: #3e8e41;
+        }
+
+        /* Updated CSS for 2x2 grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Creates two columns */
+            grid-template-rows: repeat(2, 1fr);    /* Creates two rows */
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Ensure each card takes up one grid cell */
+        .product-card {
+            grid-column: auto; /* Resets any previous column span */
+            grid-row: auto;    /* Resets any previous row span */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Flower Shop</div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="Our products.html"> Products</a>
+                 <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="product-grid">
+        <div class="product-card">
+            <img src="https://th.bing.com/th/id/OIP.M8f2i6dNcfLpw41gbP2tkQHaIx?w=152&h=181&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Flower 1">
+            <h3> Pink Rose Bouquet</h3>
+            <p>A beautiful bouquet of red roses.</p>
+            <p class="price">Rs.599</p>
+            <button onclick="addToCart('Pink Rose Bouquet', 599)">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://th.bing.com/th/id/OIP.5VRPkVV-HsjZWXjCobO6BAHaKA?w=147&h=199&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Flower 2">
+            <h3>Lily Arrangement</h3>
+            <p>A beautiful bouquet of pink roses.</p>
+            <p class="price">Rs.650</p>
+            <button onclick="addToCart('Lily Arrangement', 650)">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://th.bing.com/th/id/OIP.7AU3nwSSdBbbTfXy2KQX7wHaHa?w=200&h=199&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Flower 3">
+            <h3>Sunflower Mix</h3>
+            <p>Bright and cheerful red roses arrangement.</p>
+            <p class="price">Rs.750</p>
+            <button onclick="addToCart('Sunflower Mix', 750)">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://th.bing.com/th/id/OIP.5zp8vJ-lEtt4o-Ut8LbxWQHaJ4?w=158&h=210&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Flower 4">
+            <h3>Mixed Spring Flowers</h3>
+            <p>A lovely roses blooms.</p>
+            <p class="price">Rs.699</p>
+            <button onclick="addToCart('Mixed Spring Flowers', 699)">Add to Cart</button>
+        </div>
+
+         <div class="product-card">
+            <img src="https://th.bing.com/th/id/OIP.5kMBRcKcbBWV_R-Hg6inngHaKA?w=142&h=192&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Flower 5">
+            <h3>Mixed Spring Flowers</h3>
+            <p>A colorful mix of spring blooms.</p>
+            <p class="price">Rs.399</p>
+            <button onclick="addToCart('Mixed Spring Flowers', 399)">Add to Cart</button>
+        </div>
+
+         <div class="product-card">
+            <img src="https://th.bing.com/th/id/OIP.OnZn1LX8s-HhgYUOjOtCdwHaEK?w=315&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Flower 6">
+            <h3>Mixed Spring Flowers</h3>
+            <p>A colorful mix of spring blooms.</p>
+            <p class="price">Rs.599</p>
+            <button onclick="addToCart('Mixed Spring Flowers', 599)">Add to Cart</button>
+        </div>
+
+         <div class="product-card">
+            <img src="https://th.bing.com/th/id/OIF.VoC9eAgIankmJAbcWB7jzA?w=195&h=195&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Flower 7">
+            <h3>Mixed Spring Flowers</h3>
+            <p>A colorful mix of spring blooms.</p>
+            <p class="price">Rs.59.99</p>
+            <button onclick="addToCart('Mixed Spring Flowers', 59.99)">Add to Cart</button>
+        </div>
+
+         <div class="product-card">
+            <img src="https://th.bing.com/th/id/OIP.JJB5P0ihl9JO3N9GhP1B2AHaHa?w=214&h=214&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Flower 8">
+            <h3>Mixed Spring Flowers</h3>
+            <p>A colorful mix of spring blooms.</p>
+            <p class="price">Rs.499</p>
+            <button onclick="addToCart('Mixed Spring Flowers', 499)">Add to Cart</button>
+        </div>
+
+         <div class="product-card">
+            <img src="https://th.bing.com/th/id/OIP.EEB2Fn6P_YI_WXRWTvv3zAHaHd?w=176&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Flower 9">
+            <h3>Mixed Spring Flowers</h3>
+            <p>A colorful mix of spring blooms.</p>
+            <p class="price">Rs.799</p>
+            <button onclick="addToCart('Mixed Spring Flowers', 799)">Add to Cart</button>
+        </div>
+
+         <div class="product-card">
+            <img src="https://th.bing.com/th/id/OIP.LSQwJ34ksUWQj-33soph6QHaHa?w=178&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Flower 10">
+            <h3>Mixed Spring Flowers</h3>
+            <p>A beautiful bouquet of red roses.</p>
+            <p class="price">Rs.899</p>
+            <button onclick="addToCart('Mixed Spring Flowers', 899)">Add to Cart</button>
+        </div>
+    </div>
+
+    <script>
+        function addToCart(productName, price) {
+            // You would typically send this data to a server or store it in local storage
+            // For demonstration purposes, let's just display an alert
+            alert(productName + ' with price Rs.' + price + ' added to cart!');
+
+            // Store the cart data in local storage
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push({ name: productName, price: price });
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+    </script>
+</body>
+</html>

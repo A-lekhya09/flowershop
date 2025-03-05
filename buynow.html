@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Now</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .payment-options {
+            margin-bottom: 15px;
+        }
+
+        .payment-options label {
+            display: inline-block; /* Display labels inline */
+            margin-right: 10px; /* Add some spacing between labels */
+        }
+
+        .payment-options input[type="radio"] {
+            display: inline-block; /* Display radio buttons inline */
+            width: auto; /* Adjust width to fit content */
+            margin-right: 5px; /* Add spacing between radio button and label */
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #3e8e41;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .popup-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Delivery Details</h2>
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" name="phone" required>
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" required>
+
+        <label for="deliveryDate">Delivery Date:</label>
+        <input type="date" id="deliveryDate" name="deliveryDate" required>
+
+        <div class="payment-options">
+            <label>Payment Method:</label><br>
+            <input type="radio" id="online" name="paymentMethod" value="online">
+            <label for="online">Online</label>
+            <input type="radio" id="cashOnDelivery" name="paymentMethod" value="cashOnDelivery">
+            <label for="cashOnDelivery">Cash on Delivery</label>
+        </div>
+
+        <button onclick="showPopup()">Confirm and Submit</button>
+    </div>
+
+    <div class="popup" id="myPopup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <p>Are you sure you want to submit?</p>
+            <button onclick="submitForm()">Yes</button>
+            <button onclick="closePopup()">No</button>
+        </div>
+    </div>
+
+    <script>
+        function showPopup() {
+            document.getElementById("myPopup").style.display = "block";
+        }
+
+        function closePopup() {
+            document.getElementById("myPopup").style.display = "none";
+        }
+
+        function submitForm() {
+            alert("Thank you for your order! Visit again.");
+            closePopup();
+        }
+    </script>
+</body>
+</html>

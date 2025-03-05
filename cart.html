@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: rgba(247, 250, 248, 0.9);
+            padding: 20px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        header nav {
+            display: flex;
+            gap: 50px;
+        }
+
+        header nav a {
+            text-decoration: none;
+            color: #0f0f0f;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: large;
+        }
+
+        header nav a:hover {
+            color: #37f90b;
+        }
+
+        .cart-container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .item-info img {
+            width: 80px;
+            height: 80px;
+            margin-right: 10px;
+            border: 1px solid #ddd;
+        }
+
+        .item-details {
+            flex-grow: 1;
+        }
+
+        .item-details h3 {
+            font-size: 1.2em;
+            margin: 0;
+        }
+
+        .item-details p {
+            margin: 5px 0;
+            color: #777;
+        }
+
+        .item-quantity {
+            display: flex;
+            align-items: center;
+        }
+
+        .item-quantity button {
+            background-color: #ddd;
+            border: none;
+            padding: 5px 10px;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        .item-quantity span {
+            font-size: 1.1em;
+        }
+
+        .cart-total {
+            text-align: right;
+            margin-top: 20px;
+            font-size: 1.3em;
+        }
+
+        .buy-now-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 10px;
+            display: inline-block; /* Added to allow margin-top to work */
+            text-decoration: none; /* Optional: remove underline from the link */
+        }
+
+        .buy-now-button:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Flower Shop</div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="Our products.html">Products</a>
+                
+                <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="cart-container">
+        <h2>Shopping Cart</h2>
+
+        <div class="cart-item">
+            <div class="item-info">
+                <img src="https://th.bing.com/th/id/OIP.M8f2i6dNcfLpw41gbP2tkQHaIx?w=152&h=181&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Pink Rose Bouquet">
+                <div class="item-details">
+                    <h3>Pink Rose Bouquet</h3>
+                    <p>A beautiful bouquet of pink roses.</p>
+                    <p>Price: Rs. 599</p>
+                </div>
+            </div>
+            <div class="item-quantity">
+                <button>-</button>
+                <span>1</span>
+                <button>+</button>
+            </div>
+            <a href="buynow.html" class="buy-now-button">Buy Now</a>
+        </div>
+
+        <div class="cart-item">
+            <div class="item-info">
+                <img src="https://th.bing.com/th/id/OIP.5VRPkVV-HsjZWXjCobO6BAHaKA?w=147&h=199&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Lily Arrangement">
+                <div class="item-details">
+                    <h3>Lily Arrangement</h3>
+                    <p>An elegant arrangement of lilies.</p>
+                    <p>Price: Rs. 650</p>
+                </div>
+            </div>
+            <div class="item-quantity">
+                <button>-</button>
+                <span>2</span>
+                <button>+</button>
+            </div>
+             <a href="buynow.html" class="buy-now-button">Buy Now</a>
+        </div>
+
+        <div class="cart-total">
+            Total: Rs. 1899
+        </div>
+         <a href="buynow.html" class="buy-now-button">Buy Now</a>
+    </div>
+</body>
+</html>
