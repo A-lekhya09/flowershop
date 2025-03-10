@@ -100,6 +100,17 @@
             font-size: 20px;
             cursor: pointer;
         }
+
+        /* Style to hide the previous date selection */
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            display: block;
+            color: rgba(0, 0, 0, 0);
+            opacity: 1;
+        }
+
+        input[type="date"]::-webkit-clear-button {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -112,7 +123,7 @@
         <input type="text" id="address" name="address" required>
 
         <label for="deliveryDate">Delivery Date:</label>
-        <input type="date" id="deliveryDate" name="deliveryDate" required>
+        <input type="date" id="deliveryDate" name="deliveryDate" required min=<?php echo date('Y-m-d'); ?>>
 
         <div class="payment-options">
             <label>Payment Method:</label><br>
